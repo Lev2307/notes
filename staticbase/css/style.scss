@@ -1,0 +1,8 @@
+@import './breakpoints';
+@import './main';
+@import './reset';
+
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
