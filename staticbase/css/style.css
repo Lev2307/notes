@@ -90,6 +90,7 @@
   font-size: 20px;
   text-align: center;
   color: #000000;
+  letter-spacing: 0.5px;
 }
 
 @media (min-width: 1400px) {
@@ -407,12 +408,24 @@
   }
 }
 
+.section-wrapper-top__login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 450px;
+}
+
 .section-wrapper-top__login .login {
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 21px;
-  line-height: 44px;
   text-align: center;
   color: black;
   text-decoration: none;
@@ -423,6 +436,28 @@
   .section-wrapper-top__login .login {
     font-size: 26px;
   }
+}
+
+.section-wrapper-top__login .user {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 21px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  display: inline;
+}
+
+.section-wrapper-top__login .profile {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 21px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  display: inline;
 }
 
 .section-wrapper-middle {
@@ -614,6 +649,426 @@
   }
 }
 
+.section-reg {
+  height: 100vh;
+  background: linear-gradient(135deg, #FCCF31 0%, #F55555 100%);
+}
+
+.section-reg-wrapper {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-reg-wrapper__box {
+  width: 825px;
+  height: 525px;
+  background: #fff;
+  position: relative;
+  border-radius: 10px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box {
+    width: 1025px;
+    height: 725px;
+  }
+}
+
+.section-reg-wrapper__box__logo {
+  background: url("../media/login_and_reg_images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 160px;
+  height: 70px;
+  margin-top: 5px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__logo {
+    width: 195px;
+    height: 85px;
+  }
+}
+
+.section-reg-wrapper__box__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-reg-wrapper__box__main__image {
+  background: url("../media/login_and_reg_images/woman.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 315px;
+  height: 430px;
+  margin-left: 30px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main__image {
+    width: 395px;
+    height: 510px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form {
+    width: 350px;
+    margin-bottom: 0px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .reg_text {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: center;
+  color: #000000;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .reg_text {
+    font-size: 29px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg {
+  width: 250px;
+  height: 50px;
+  background: #D2D2D2;
+  border-radius: 67px;
+  border: none;
+  text-indent: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  font-weight: 600;
+  color: #454545;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .user_fieldreg {
+    width: 350px;
+    height: 70px;
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg::-webkit-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg:-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg::-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg::placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .user_fieldreg::-webkit-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .user_fieldreg:-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .user_fieldreg::-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .user_fieldreg::placeholder {
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg {
+  width: 250px;
+  height: 50px;
+  background: #D2D2D2;
+  border-radius: 67px;
+  border: none;
+  text-indent: 10px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  font-weight: 600;
+  color: #454545;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .email_fieldreg {
+    width: 350px;
+    height: 70px;
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg::-webkit-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg:-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg::-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg::placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .email_fieldreg::-webkit-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .email_fieldreg:-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .email_fieldreg::-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .email_fieldreg::placeholder {
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg {
+  width: 250px;
+  height: 50px;
+  background: #D2D2D2;
+  border-radius: 67px;
+  border: none;
+  text-indent: 10px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  font-weight: 600;
+  color: #454545;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg {
+    width: 350px;
+    height: 70px;
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::-webkit-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::-webkit-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::placeholder {
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg {
+  width: 250px;
+  height: 50px;
+  background: #D2D2D2;
+  border-radius: 67px;
+  border: none;
+  text-indent: 10px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  font-weight: 600;
+  color: #454545;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg {
+    width: 350px;
+    height: 70px;
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::-webkit-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  color: #454545;
+  font-size: 18px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::-webkit-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::-ms-input-placeholder {
+    font-size: 22px;
+  }
+  .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::placeholder {
+    font-size: 22px;
+  }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .submit {
+  border: none;
+  width: 250px;
+  height: 50px;
+  color: #fff;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 29px;
+  background: #4BCE1C;
+  border-radius: 67px;
+  margin-top: 15px;
+}
+
+@media (min-width: 1400px) {
+  .section-reg-wrapper__box__main .blockreg_form .submit {
+    width: 350px;
+    height: 70px;
+  }
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -621,7 +1076,7 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+fieldset, form, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
@@ -652,6 +1107,7 @@ body {
 
 ol, ul {
   list-style: none;
+  display: none;
 }
 
 blockquote, q {
@@ -682,6 +1138,10 @@ input[type=search] {
   -moz-appearance: none;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+}
+
+span.helptext {
+  display: none;
 }
 
 textarea {

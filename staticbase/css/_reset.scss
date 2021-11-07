@@ -5,7 +5,7 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
+fieldset, form, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
@@ -36,6 +36,7 @@ body {
 
 ol, ul {
 	list-style: none;
+    display: none;
 }
 
 blockquote, q {
@@ -67,7 +68,9 @@ input[type=search] {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
-
+span.helptext {
+    display: none;
+}
 textarea {
     overflow: auto;
     vertical-align: top;

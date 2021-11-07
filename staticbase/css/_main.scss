@@ -19,12 +19,15 @@
                 }
             }
             &__login {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 450px;
                 .login {
-                    font-family: Montserrat;
+                    font-family: 'Montserrat', sans-serif;
                     font-style: normal;
                     font-weight: 600;
                     font-size: 21px;
-                    line-height: 44px;
                     text-align: center;
                     color: black;
                     text-decoration: none;
@@ -32,6 +35,26 @@
                     @include media('>=LGdesktop') {
                         font-size: 26px;
                     }
+                }
+                .user {
+                    font-family: 'Montserrat Alternates', sans-serif;
+                    font-style: normal;
+                    font-weight: 100;
+                    font-size: 21px;
+                    text-align: center;
+                    color: white;
+                    text-decoration: none;
+                    display: inline;
+                }
+                .profile {
+                    font-family: 'Montserrat Alternates', sans-serif;
+                    font-style: normal;
+                    font-weight: 100;
+                    font-size: 21px;
+                    text-align: center;
+                    color: #000;
+                    text-decoration: none;
+                    display: inline;
                 }
             }
         }

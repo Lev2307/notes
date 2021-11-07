@@ -8,6 +8,11 @@
         <div class="section-wrapper-top">
             <div class="section-wrapper-top__logo"></div>
             <div class="section-wrapper-top__login">
+                {% if user.is_authenticated %}
+                <div class="user_name">
+                    <span class="user">user :</span><span class="profile"> {{ profile.username }}</span>
+                </div>
+                {% endif %}
                 <a class="login" href="/login">Log In</a>
             </div>
         </div>
