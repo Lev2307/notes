@@ -62,7 +62,7 @@
                         display: none;
                     }
                     .user_field {
-                        width: 250px;
+                        width: 260px;
                         height: 50px;
                         background: #D2D2D2;
                         border-radius: 67px;
@@ -72,13 +72,21 @@
                         font-size: 18px;
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-weight: 600;
-                        font-weight: 600;
-                        color: #454545;
+                        background-image: url('../media/login_and_reg_images/account.png');
+                        background-repeat: no-repeat;
+                        background-size: 21px 21px;
+                        background-position: top 16px left 8px;
+                        text-indent: 35px;
+                        transition: text-indent ease-in-out 0.15s;
                         @include media('>=LGdesktop') {
                             width: 350px;
                             height: 70px;
                             font-size: 22px;
                         }
+                    }
+                    .user_field:focus {
+                        background-image: url('');
+                        text-indent: 10px;
                     }
                     .user_field::placeholder {
                         font-family: 'Montserrat Alternates', sans-serif;
@@ -86,9 +94,13 @@
                         font-weight: 600;
                         color: #454545;
                         font-size: 18px;
+                        text-indent: 35px;
                         @include media('>=LGdesktop') {
                             font-size: 22px;
                         }
+                    }
+                    .user_field:focus::placeholder {
+                        text-indent: 10px;
                     }
                     .password_field {
                         width: 250px;
@@ -101,23 +113,35 @@
                         font-size: 18px;
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-weight: 600;
-                        font-weight: 600;
-                        color: #454545;
+                        background-image: url('../media/login_and_reg_images/password.png');
+                        background-repeat: no-repeat;
+                        background-size: 22px 22px;
+                        background-position: top 15px left 8px;
+                        text-indent: 35px;
+                        transition: text-indent ease-in-out 0.15s;
                         @include media('>=LGdesktop') {
                             width: 350px;
                             height: 70px;
                             font-size: 22px;
-                            margin-top: 20px;
                         }
+                    }
+                    .password_field:focus {
+                        background-image: url('');
+                        text-indent: 10px;
                     }
                     .password_field::placeholder {
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-style: normal;
                         font-weight: 600;
                         color: #454545;
+                        font-size: 18px;
+                        text-indent: 35px;
                         @include media('>=LGdesktop') {
                             font-size: 22px;
                         }
+                    }
+                    .password_field:focus::placeholder {
+                        text-indent: 10px;
                     }
                     .forgot {
                         display: flex;

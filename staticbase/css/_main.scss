@@ -18,12 +18,12 @@
                     height: 60px;
                 }
             }
-            &__login {
+            &__logout {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 width: 450px;
-                .login {
+                .logout {
                     font-family: 'Montserrat', sans-serif;
                     font-style: normal;
                     font-weight: 600;
@@ -36,25 +36,49 @@
                         font-size: 26px;
                     }
                 }
-                .user {
-                    font-family: 'Montserrat Alternates', sans-serif;
-                    font-style: normal;
-                    font-weight: 100;
-                    font-size: 21px;
-                    text-align: center;
-                    color: white;
-                    text-decoration: none;
-                    display: inline;
+                .user_name {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .user {
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: 100;
+                        font-size: 21px;
+                        text-align: center;
+                        color: white;
+                        text-decoration: none;
+                        display: inline;
+                    }
+                    .profile {
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: 100;
+                        font-size: 21px;
+                        text-align: center;
+                        color: #000;
+                        text-decoration: none;
+                        display: inline;
+                        margin-left: 8px;
+                    }
                 }
-                .profile {
-                    font-family: 'Montserrat Alternates', sans-serif;
+            }
+            &__login {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .login {
+                    font-family: 'Montserrat', sans-serif;
                     font-style: normal;
-                    font-weight: 100;
+                    font-weight: 600;
                     font-size: 21px;
                     text-align: center;
-                    color: #000;
+                    color: black;
                     text-decoration: none;
-                    display: inline;
+                    margin-right: 10px;
+                    @include media('>=LGdesktop') {
+                        font-size: 26px;
+                    }
                 }
             }
         }

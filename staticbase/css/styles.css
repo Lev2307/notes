@@ -108,7 +108,7 @@
 }
 
 .section-login-wrapper-box__main .login-form .user_field {
-  width: 250px;
+  width: 260px;
   height: 50px;
   background: #D2D2D2;
   border-radius: 67px;
@@ -118,8 +118,13 @@
   font-size: 18px;
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
-  font-weight: 600;
-  color: #454545;
+  background-image: url("../media/login_and_reg_images/account.png");
+  background-repeat: no-repeat;
+  background-size: 21px 21px;
+  background-position: top 16px left 8px;
+  text-indent: 35px;
+  -webkit-transition: text-indent ease-in-out 0.15s;
+  transition: text-indent ease-in-out 0.15s;
 }
 
 @media (min-width: 1400px) {
@@ -130,12 +135,18 @@
   }
 }
 
+.section-login-wrapper-box__main .login-form .user_field:focus {
+  background-image: url("");
+  text-indent: 10px;
+}
+
 .section-login-wrapper-box__main .login-form .user_field::-webkit-input-placeholder {
   font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-login-wrapper-box__main .login-form .user_field:-ms-input-placeholder {
@@ -144,6 +155,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-login-wrapper-box__main .login-form .user_field::-ms-input-placeholder {
@@ -152,6 +164,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-login-wrapper-box__main .login-form .user_field::placeholder {
@@ -160,6 +173,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 @media (min-width: 1400px) {
@@ -177,6 +191,22 @@
   }
 }
 
+.section-login-wrapper-box__main .login-form .user_field:focus::-webkit-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-login-wrapper-box__main .login-form .user_field:focus:-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-login-wrapper-box__main .login-form .user_field:focus::-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-login-wrapper-box__main .login-form .user_field:focus::placeholder {
+  text-indent: 10px;
+}
+
 .section-login-wrapper-box__main .login-form .password_field {
   width: 250px;
   height: 50px;
@@ -188,8 +218,13 @@
   font-size: 18px;
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
-  font-weight: 600;
-  color: #454545;
+  background-image: url("../media/login_and_reg_images/password.png");
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: top 15px left 8px;
+  text-indent: 35px;
+  -webkit-transition: text-indent ease-in-out 0.15s;
+  transition: text-indent ease-in-out 0.15s;
 }
 
 @media (min-width: 1400px) {
@@ -197,8 +232,12 @@
     width: 350px;
     height: 70px;
     font-size: 22px;
-    margin-top: 20px;
   }
+}
+
+.section-login-wrapper-box__main .login-form .password_field:focus {
+  background-image: url("");
+  text-indent: 10px;
 }
 
 .section-login-wrapper-box__main .login-form .password_field::-webkit-input-placeholder {
@@ -206,6 +245,8 @@
   font-style: normal;
   font-weight: 600;
   color: #454545;
+  font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-login-wrapper-box__main .login-form .password_field:-ms-input-placeholder {
@@ -213,6 +254,8 @@
   font-style: normal;
   font-weight: 600;
   color: #454545;
+  font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-login-wrapper-box__main .login-form .password_field::-ms-input-placeholder {
@@ -220,6 +263,8 @@
   font-style: normal;
   font-weight: 600;
   color: #454545;
+  font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-login-wrapper-box__main .login-form .password_field::placeholder {
@@ -227,6 +272,8 @@
   font-style: normal;
   font-weight: 600;
   color: #454545;
+  font-size: 18px;
+  text-indent: 35px;
 }
 
 @media (min-width: 1400px) {
@@ -242,6 +289,22 @@
   .section-login-wrapper-box__main .login-form .password_field::placeholder {
     font-size: 22px;
   }
+}
+
+.section-login-wrapper-box__main .login-form .password_field:focus::-webkit-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-login-wrapper-box__main .login-form .password_field:focus:-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-login-wrapper-box__main .login-form .password_field:focus::-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-login-wrapper-box__main .login-form .password_field:focus::placeholder {
+  text-indent: 10px;
 }
 
 .section-login-wrapper-box__main .login-form .forgot {
@@ -408,7 +471,7 @@
   }
 }
 
-.section-wrapper-top__login {
+.section-wrapper-top__logout {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,6 +482,70 @@
       -ms-flex-align: center;
           align-items: center;
   width: 450px;
+}
+
+.section-wrapper-top__logout .logout {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+@media (min-width: 1400px) {
+  .section-wrapper-top__logout .logout {
+    font-size: 26px;
+  }
+}
+
+.section-wrapper-top__logout .user_name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section-wrapper-top__logout .user_name .user {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 21px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  display: inline;
+}
+
+.section-wrapper-top__logout .user_name .profile {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 21px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  display: inline;
+  margin-left: 8px;
+}
+
+.section-wrapper-top__login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .section-wrapper-top__login .login {
@@ -436,28 +563,6 @@
   .section-wrapper-top__login .login {
     font-size: 26px;
   }
-}
-
-.section-wrapper-top__login .user {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 21px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  display: inline;
-}
-
-.section-wrapper-top__login .profile {
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-style: normal;
-  font-weight: 100;
-  font-size: 21px;
-  text-align: center;
-  color: #000;
-  text-decoration: none;
-  display: inline;
 }
 
 .section-wrapper-middle {
@@ -770,16 +875,21 @@
 .section-reg-wrapper__box__main .blockreg_form .user_fieldreg {
   width: 250px;
   height: 50px;
-  background: #D2D2D2;
+  background-color: #D2D2D2;
   border-radius: 67px;
   border: none;
-  text-indent: 10px;
   margin-top: 10px;
   font-size: 18px;
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
-  font-weight: 600;
   color: #454545;
+  background-image: url("../media/login_and_reg_images/account.png");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: top 16px left 8px;
+  text-indent: 35px;
+  -webkit-transition: text-indent ease-in-out 0.15s;
+  transition: text-indent ease-in-out 0.15s;
 }
 
 @media (min-width: 1400px) {
@@ -790,12 +900,18 @@
   }
 }
 
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg:focus {
+  background-image: url("");
+  text-indent: 10px;
+}
+
 .section-reg-wrapper__box__main .blockreg_form .user_fieldreg::-webkit-input-placeholder {
   font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .user_fieldreg:-ms-input-placeholder {
@@ -804,6 +920,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .user_fieldreg::-ms-input-placeholder {
@@ -812,6 +929,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .user_fieldreg::placeholder {
@@ -820,6 +938,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 @media (min-width: 1400px) {
@@ -837,6 +956,22 @@
   }
 }
 
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg:focus::-webkit-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg:focus:-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg:focus::-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .user_fieldreg:focus::placeholder {
+  text-indent: 10px;
+}
+
 .section-reg-wrapper__box__main .blockreg_form .email_fieldreg {
   width: 250px;
   height: 50px;
@@ -848,8 +983,13 @@
   font-size: 18px;
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
-  font-weight: 600;
-  color: #454545;
+  background-image: url("../media/login_and_reg_images/email_icon.png");
+  background-repeat: no-repeat;
+  background-size: 20px 15px;
+  background-position: top 19px left 8px;
+  text-indent: 35px;
+  -webkit-transition: text-indent ease-in-out 0.15s;
+  transition: text-indent ease-in-out 0.15s;
 }
 
 @media (min-width: 1400px) {
@@ -860,12 +1000,18 @@
   }
 }
 
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg:focus {
+  background-image: url("");
+  text-indent: 10px;
+}
+
 .section-reg-wrapper__box__main .blockreg_form .email_fieldreg::-webkit-input-placeholder {
   font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .email_fieldreg:-ms-input-placeholder {
@@ -874,6 +1020,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .email_fieldreg::-ms-input-placeholder {
@@ -882,6 +1029,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .email_fieldreg::placeholder {
@@ -890,6 +1038,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 @media (min-width: 1400px) {
@@ -907,6 +1056,22 @@
   }
 }
 
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg:focus::-webkit-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg:focus:-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg:focus::-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .email_fieldreg:focus::placeholder {
+  text-indent: 10px;
+}
+
 .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg {
   width: 250px;
   height: 50px;
@@ -918,8 +1083,13 @@
   font-size: 18px;
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
-  font-weight: 600;
-  color: #454545;
+  background-image: url("../media/login_and_reg_images/password.png");
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: top 15px left 8px;
+  text-indent: 35px;
+  -webkit-transition: text-indent ease-in-out 0.15s;
+  transition: text-indent ease-in-out 0.15s;
 }
 
 @media (min-width: 1400px) {
@@ -930,12 +1100,18 @@
   }
 }
 
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:focus {
+  background-image: url("");
+  text-indent: 10px;
+}
+
 .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::-webkit-input-placeholder {
   font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:-ms-input-placeholder {
@@ -944,6 +1120,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::-ms-input-placeholder {
@@ -952,6 +1129,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .password1_fieldreg::placeholder {
@@ -960,6 +1138,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 @media (min-width: 1400px) {
@@ -977,6 +1156,22 @@
   }
 }
 
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:focus::-webkit-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:focus:-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:focus::-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password1_fieldreg:focus::placeholder {
+  text-indent: 10px;
+}
+
 .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg {
   width: 250px;
   height: 50px;
@@ -988,8 +1183,13 @@
   font-size: 18px;
   font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 600;
-  font-weight: 600;
-  color: #454545;
+  background-image: url("../media/login_and_reg_images/confirm_icon.png");
+  background-repeat: no-repeat;
+  background-size: 21px 21px;
+  background-position: top 16px left 8px;
+  text-indent: 35px;
+  -webkit-transition: text-indent ease-in-out 0.15s;
+  transition: text-indent ease-in-out 0.15s;
 }
 
 @media (min-width: 1400px) {
@@ -1000,12 +1200,18 @@
   }
 }
 
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:focus {
+  background-image: url("");
+  text-indent: 10px;
+}
+
 .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::-webkit-input-placeholder {
   font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:-ms-input-placeholder {
@@ -1014,6 +1220,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::-ms-input-placeholder {
@@ -1022,6 +1229,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::placeholder {
@@ -1030,6 +1238,7 @@
   font-weight: 600;
   color: #454545;
   font-size: 18px;
+  text-indent: 35px;
 }
 
 @media (min-width: 1400px) {
@@ -1045,6 +1254,22 @@
   .section-reg-wrapper__box__main .blockreg_form .password2_fieldreg::placeholder {
     font-size: 22px;
   }
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:focus::-webkit-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:focus:-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:focus::-ms-input-placeholder {
+  text-indent: 10px;
+}
+
+.section-reg-wrapper__box__main .blockreg_form .password2_fieldreg:focus::placeholder {
+  text-indent: 10px;
 }
 
 .section-reg-wrapper__box__main .blockreg_form .submit {

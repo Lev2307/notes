@@ -7,14 +7,18 @@
     <div class="section-wrapper">
         <div class="section-wrapper-top">
             <div class="section-wrapper-top__logo"></div>
-            <div class="section-wrapper-top__login">
-                {% if user.is_authenticated %}
-                <div class="user_name">
-                    <span class="user">user :</span><span class="profile"> {{ profile.username }}</span>
+            {% if user.is_authenticated %}
+                <div class="section-wrapper-top__logout">
+                    <div class="user_name">
+                        <span class="user">user :</span><span class="profile"> {{ profile.username }}</span>
+                    </div>
+                    <a class="logout" href="/logout">Log Out</a>
                 </div>
-                {% endif %}
-                <a class="login" href="/login">Log In</a>
-            </div>
+            {% else %}
+                <div class="section-wrapper-top__login">
+                    <a class="login" href="/login">Log In</a>
+                </div>
+            {% endif %}
         </div>
         <div class="section-wrapper-middle">
             <div class="section-wrapper-middle__note-image"></div>
