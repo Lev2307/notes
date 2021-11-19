@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if prev > 0 %}
+    <a href="?page={{prev}}">prev</a>
+    {% endif %}
+    {% for page in pages_count_list %}
+        <a href="?page={{page}}">{{page}}</a>
+    {% endfor %}
+    {% if next <= pages_count %}
+        <a href="?page={{next}}">next</a>
+    {% endif %}
+    {% for item in data_list %}
+        <h1>{{ item.header }}</h1>
+        <p>{{ item.date }}</p>
+        <p>{{ item.text }}</p>
+    {% endfor %}
+{% endblock %}
