@@ -1,11 +1,64 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="" method="post" enctype='multipart/form-data'>
-    {% csrf_token %}
+    <div class="section-create">
+        <div class="section-create-wrapper">
+            <div class="section-create-wrapper__header">
+                <div title="Menu" id="menuToggle">
+                    <input type="checkbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div id="menu">
+                        <div class="block-links">
+                            <div class="create">
+                                <div class="create_icon"></div>
+                                <a class="link_create" href="/notes/create/">Create note</a>
+                            </div>
+                            <div class="read">
+                                <div class="read_icon"></div>
+                                <a class="link_read" href='/notes/read/'>Read Notes</a>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="username">
+                                <h2 class="profile_name">{{ profile.username }}</h2>
+                                <div class="username_icon"></div>
+                            </div>
+                            <div class="logout">
+                                <h2 class="logout_text">logout</h2>
+                                <div class="logout_icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-create-wrapper__header__logo"></div>
+            </div>
+            <div class="section-create-wrapper__main">
+                <div class="section-create-wrapper__main__box">
+                    <div class="section-create-wrapper__main__box__image"></div>
+                    <div class="block_createform">
+                        <h1 class="create_text">Create Form</h1>
+                        <form class="creation" action="" method="post" enctype='multipart/form-data'>
+                            {% csrf_token %}
+                        
+                            {{ form.as_p }}
+                            <button class="submit" type="submit">Create note</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    // name
+    document.querySelector("label[for=id_header]").innerHTML = "Note name:";
+    document.getElementById("id_header").classList.add("header_field");
+    document.getElementById("id_header").placeholder = "My note";
 
-    {{ form.as_p }}
-    <input type="submit" value='>' id="submit">
-</form>
-
+    // text
+    document.querySelector("label[for=id_text]").innerHTML = "Note text:";
+    document.getElementById("id_text").classList.add("text_field");
+    document.getElementById("id_text").placeholder = "Enter some note text";
+</script>
 {% endblock %}

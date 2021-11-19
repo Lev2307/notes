@@ -1,0 +1,315 @@
+.section-create {
+    height: 100vh;
+    background: linear-gradient(135deg, #FF9D6C 0%, #BB4E75 100%);
+    &-wrapper {
+        height: 100vh;
+        &__header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            
+            // Hamburger Menu
+            #menuToggle {
+                display: block;
+                position: fixed;
+                z-index: 1;
+                -webkit-user-select: none;
+                user-select: none;
+                margin-left: 35px;
+                margin-bottom: 15px;
+            }
+            #menuToggle input {
+                display: block;
+                width: 40px;
+                height: 32px;
+                position: absolute;
+                top: -7px;
+                left: -5px;
+                cursor: pointer;
+                opacity: 0;
+                z-index: 2;
+                -webkit-touch-callout: none;
+            }
+            #menuToggle span {
+                display: block;
+                width: 29px;
+                height: 4px;
+                margin-bottom: 5px;
+                position: relative;
+                background: #000;
+                border-radius: 3px;
+                z-index: 1;
+                transform-origin: 3px 0px;
+                transition: transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+            }
+            #menuToggle span:first-child {
+                transform-origin: 0% 0%;
+            }
+            #menuToggle span:nth-last-child(2) {
+                transform-origin: 0% 100%;
+            }
+            #menuToggle input:checked ~ span {
+                opacity: 1;
+                transform: rotate(40deg) translate(11px, -3px);
+                background: #4BCE1C;
+            }
+            #menuToggle input:checked ~ span:nth-last-child(3) {
+                opacity: 0;
+                transform: rotate(0deg)     
+                    scale(0.2, 0.2);
+            }
+            #menuToggle input:checked ~ span:nth-last-child(2) {
+                opacity: 1;
+                transform: rotate(-40deg) translate(6px, 9px);
+            }
+            #menu {
+                position: absolute;
+                width: 200px;
+                height: 100vh;
+                margin: -100px 0 0 -50px;
+                padding: 50px;
+                padding-top: 125px;
+                background: #d6d0d0;
+                list-style-type: none;
+                transform-origin: 0 0;
+                transform: translate(-100%, 0);
+                transition: transform 0.5s;
+                text-align: center;
+            }
+            #menuToggle input:checked ~ #menu {
+                transform: scale(1.0, 1.0);
+            }
+            .block-links {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-top: 10px;
+                .create {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    &_icon {
+                        background: url('../media/create_and_read_images/plus.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .link_create {
+                        text-decoration: none;
+                        color: #000;
+                        font-size: 21px;
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        margin-left: 10px;
+                        transition: 0.5s;
+                    }
+                    .link_create:hover {
+                        opacity: 0.6;
+                    }
+                }
+                .read {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    &_icon {
+                        background: url('../media/create_and_read_images/book.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .link_read {
+                        text-decoration: none;
+                        color: #000;
+                        font-size: 21px;
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        margin-left: 10px;
+                        transition: 0.5s;
+                    }
+                    .link_read:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+            .bottom {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: absolute;
+                bottom: 130px;
+                left: 10px;
+                .username {
+                    margin-left: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    .profile_name {
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        color: #000000;
+                        transition: 0.5s;
+                    }
+                    .profile_name:hover {
+                        opacity: 0.6;
+                    }
+                    &_icon {
+                        background: url('../media/login_and_reg_images/account.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 27px;
+                        height: 27px;
+                    }
+                }
+                .logout {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 15px;
+                    cursor: pointer;
+                    &_text {
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        color: #000;
+                        transition: 0.6s;
+                    }
+                    &_text:hover {
+                        opacity: 0.6;
+                    }
+                    &_icon {
+                        background: url('../media/create_and_read_images/logout.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 27px;
+                        height: 27px;
+                    }
+                }
+            }
+            &__logo {
+                background: url('../media/index_images/logo.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 160px;
+                height: 70px;
+                margin-left: 65px;
+            }
+        }
+        &__main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &__box {
+                width: 835px;
+                height: 500px;
+                background: #FFFFFF;
+                box-shadow: 40px 40px 50px rgba(0, 0, 0, 0.25);
+                border-radius: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &__image {
+                    background: url('../media/create_and_read_images/human.jpg');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 500px;
+                    height: 470px;
+                }
+                .block_createform {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 400px;
+                    height: 370px;
+                    .create_text {
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: bolder;
+                        font-size: 32px;
+                        text-align: center;
+                        color: #000000;
+                    }
+                    .creation {
+                        margin-top: 30px;
+                        p {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            label[for=id_header] {
+                                font-family: 'Montserrat', sans-serif;
+                                font-style: italic;
+                                font-weight: 300;
+                                font-size: 16px;
+                                text-align: center;
+                                color: #000000;
+                            }
+                            .header_field {
+                                width: 300px;
+                                height: 50px;
+                                background: #FFFFFF;
+                                border: 3px solid #000000;
+                                box-sizing: border-box;
+                                border-radius: 10px;
+                                margin-top: 10px;
+                                text-indent: 15px;
+                            }
+                        }
+                        label[for=id_text] {
+                            font-family: 'Montserrat', sans-serif;
+                            font-style: italic;
+                            font-weight: 300;
+                            font-size: 16px;
+                            text-align: center;
+                            color: #000000;
+                            margin-top: 30px;
+                        }
+                        .text_field {
+                            width: 300px;
+                            height: 50px;
+                            background: #FFFFFF;
+                            border: 3px solid #000000;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            margin-top: 10px;
+                            text-indent: 15px;
+                        }
+                        .submit {
+                            border: none;
+                            width: 250px;
+                            height: 50px;
+                            color: #fff;
+                            font-family: 'Montserrat Alternates', sans-serif;
+                            font-style: normal;
+                            font-weight: 800;
+                            font-size: 22px;
+                            background: #4BCE1C;
+                            border-radius: 67px;
+                            margin-top: 30px;
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

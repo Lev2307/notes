@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
@@ -24,11 +24,11 @@ class HomePageView(View):
 
 class CreateNoteView(CreateView):
     template_name = 'notes/create.html'
-    success_url = '/notes/read/'
 
     def get(self, request, *args, **kwargs):
         form = CreateNoteModelForm(request.POST or None)
-        return render(request, 'notes/create.html', {'form': form})
+        user = request.user
+        return render(request, 'notes/create.html', {'form': form, 'profile': user})
 
     def post(self, request, *args, **kwargs):
         form = CreateNoteModelForm(request.POST)
@@ -41,6 +41,12 @@ class CreateNoteView(CreateView):
 
 class ReadNotesView(ListView):
     template_name = 'notes/read.html'
+    context_object_name = 'notes'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['notes'] = context['notes'].filter(user=self.request.user)
+        return context
 
     def get(self, request, *args, **kwargs):
         qs = Note.objects.all()
