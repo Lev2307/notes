@@ -25,7 +25,7 @@ SECRET_KEY = 'deo@z+$ueyz%!_!_&8ggt%j2vcm*m!@q!$n5adsg$&3+7@xm20'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cryptic-badlands-65500.herokuapp.com']
+ALLOWED_HOSTS = ['cryptic-badlands-65500.herokuapp.com', '127.0.0.1']
 
 
 # Application definition

@@ -17,6 +17,9 @@
                 user-select: none;
                 margin-left: 35px;
                 margin-bottom: 15px;
+                @include media('>=LGdesktop') {
+                    margin-bottom: 20px;
+                }
             }
             #menuToggle input {
                 display: block;
@@ -43,6 +46,10 @@
                 transition: transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0),
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 opacity 0.55s ease;
+                @include media('>=LGdesktop') {
+                    width: 31px;
+                    height: 5px;
+                }
             }
             #menuToggle span:first-child {
                 transform-origin: 0% 0%;
@@ -52,7 +59,7 @@
             }
             #menuToggle input:checked ~ span {
                 opacity: 1;
-                transform: rotate(40deg) translate(11px, -3px);
+                transform: rotate(40deg) translate(12px, -2px);
                 background: #4BCE1C;
             }
             #menuToggle input:checked ~ span:nth-last-child(3) {
@@ -77,6 +84,10 @@
                 transform: translate(-100%, 0);
                 transition: transform 0.5s;
                 text-align: center;
+                @include media('>=LGdesktop') {
+                    width: 220px;
+                    height: 100vh;                                                                                  
+                }
             }
             #menuToggle input:checked ~ #menu {
                 transform: scale(1.0, 1.0);
@@ -88,17 +99,57 @@
                 justify-content: flex-start;
                 align-items: flex-start;
                 margin-top: 10px;
+                .homepage {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: 0.3s ease-in-out;
+                    &_icon {
+                        background: url('../media/create_and_read_images/home.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 24px;
+                        height: 24px;
+                        @include media('>=LGdesktop') {
+                            width: 29px;
+                            height: 29px;
+                        }
+                    }
+                    .link_homepage {
+                        text-decoration: none;
+                        color: #000;
+                        font-size: 21px;
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        text-align: center;
+                        letter-spacing: 0.1em;
+                        margin-left: 10px;
+                        transition: 0.5s;
+                        @include media('>=LGdesktop') {
+                            font-size: 23px;
+                        }
+                    }
+                }
+                .homepage:hover {
+                    opacity: 0.6;
+                }
                 .create {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    margin-top: 15px;
+                    transition: 0.3s ease-in-out;
                     &_icon {
                         background: url('../media/create_and_read_images/plus.png');
                         background-repeat: no-repeat;
                         background-size: contain;
                         width: 24px;
                         height: 24px;
+                        @include media('>=LGdesktop') {
+                            width: 29px;
+                            height: 29px;
+                        }
                     }
                     .link_create {
                         text-decoration: none;
@@ -109,23 +160,31 @@
                         letter-spacing: 0.1em;
                         margin-left: 10px;
                         transition: 0.5s;
-                    }
-                    .link_create:hover {
-                        opacity: 0.6;
+                        @include media('>=LGdesktop') {
+                            font-size: 23px;
+                        }
                     }
                 }
+                .create:hover {
+                    opacity: 0.6;
+                }
                 .read {
-                    margin-top: 20px;
+                    margin-top: 15px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    transition: 0.3s ease-in-out;
                     &_icon {
                         background: url('../media/create_and_read_images/book.png');
                         background-repeat: no-repeat;
                         background-size: contain;
                         width: 24px;
                         height: 24px;
+                        @include media('>=LGdesktop') {
+                            width: 29px;
+                            height: 29px;                                                                                   
+                        }
                     }
                     .link_read {
                         text-decoration: none;
@@ -136,10 +195,13 @@
                         letter-spacing: 0.1em;
                         margin-left: 10px;
                         transition: 0.5s;
+                        @include media('>=LGdesktop') {
+                            font-size: 23px;
+                        }
                     }
-                    .link_read:hover {
-                        opacity: 0.6;
-                    }
+                }
+                .read:hover {
+                    opacity: 0.6;
                 }
             }
             .bottom {
@@ -156,6 +218,7 @@
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    transition: 0.3s ease-in-out;
                     .profile_name {
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-style: normal;
@@ -166,9 +229,6 @@
                         color: #000000;
                         transition: 0.5s;
                     }
-                    .profile_name:hover {
-                        opacity: 0.6;
-                    }
                     &_icon {
                         background: url('../media/login_and_reg_images/account.png');
                         background-repeat: no-repeat;
@@ -177,12 +237,16 @@
                         height: 27px;
                     }
                 }
+                .username:hover {
+                    opacity: 0.6;
+                }
                 .logout {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     margin-right: 15px;
                     cursor: pointer;
+                    transition: 0.3s ease-in-out;
                     &_text {
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-style: normal;
@@ -192,9 +256,7 @@
                         letter-spacing: 0.1em;
                         color: #000;
                         transition: 0.6s;
-                    }
-                    &_text:hover {
-                        opacity: 0.6;
+                        text-decoration: none;
                     }
                     &_icon {
                         background: url('../media/create_and_read_images/logout.png');
@@ -204,6 +266,9 @@
                         height: 27px;
                     }
                 }
+                .logout:hover {
+                    opacity: 0.6;
+                }
             }
             &__logo {
                 background: url('../media/index_images/logo.png');
@@ -212,6 +277,10 @@
                 width: 160px;
                 height: 70px;
                 margin-left: 65px;
+                @include media('>=LGdesktop') {
+                    width: 195px;
+                    height: 85px;
+                }
             }
         }
         &__main {
@@ -225,21 +294,32 @@
                 box-shadow: 40px 40px 50px rgba(0, 0, 0, 0.25);
                 border-radius: 10px;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
+                @include media('>=LGdesktop') {
+                    width: 1035px;
+                    height: 700px;
+                }
                 &__image {
-                    background: url('../media/create_and_read_images/human.jpg');
+                    background: url('../media/create_and_read_images/human.png');
                     background-repeat: no-repeat;
                     background-size: contain;
-                    width: 500px;
-                    height: 470px;
+                    width: 400px;
+                    height: 460px;
+                    @include media('>=LGdesktop') {
+                        width: 500px;
+                        height: 560px;
+                    }
                 }
                 .block_createform {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     width: 400px;
-                    height: 370px;
+                    height: 330px;
+                    @include media('>=LGdesktop') {
+                        height: 370px;
+                    }
                     .create_text {
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-style: normal;
@@ -247,6 +327,9 @@
                         font-size: 32px;
                         text-align: center;
                         color: #000000;
+                        @include media('>=LGdesktop') {
+                            font-size: 39px;
+                        }
                     }
                     .creation {
                         margin-top: 30px;
@@ -262,6 +345,9 @@
                                 font-size: 16px;
                                 text-align: center;
                                 color: #000000;
+                                @include media('>=LGdesktop') {
+                                    font-size: 19px;
+                                }
                             }
                             .header_field {
                                 width: 300px;
@@ -272,6 +358,10 @@
                                 border-radius: 10px;
                                 margin-top: 10px;
                                 text-indent: 15px;
+                                @include media('>=LGdesktop') {
+                                    width: 380px;
+                                    height: 60px;
+                                }
                             }
                         }
                         label[for=id_text] {
@@ -282,6 +372,9 @@
                             text-align: center;
                             color: #000000;
                             margin-top: 30px;
+                            @include media('>=LGdesktop') {
+                                font-size: 19px;
+                            }
                         }
                         .text_field {
                             width: 300px;
@@ -292,6 +385,10 @@
                             border-radius: 10px;
                             margin-top: 10px;
                             text-indent: 15px;
+                            @include media('>=LGdesktop') {
+                                width: 380px;
+                                height: 60px;
+                            }
                         }
                         .submit {
                             border: none;
@@ -306,6 +403,12 @@
                             border-radius: 67px;
                             margin-top: 30px;
                             margin-left: 15px;
+                            @include media('>=LGdesktop') {
+                                width: 300px;
+                                height: 65px;
+                                margin-left: 30px;
+                                margin-top: 45px;
+                            }
                         }
                     }
                 }

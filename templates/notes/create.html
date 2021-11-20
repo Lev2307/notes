@@ -11,6 +11,10 @@
                     <span></span>
                     <div id="menu">
                         <div class="block-links">
+                            <div class="homepage">
+                                <div class="homepage_icon"></div>
+                                <a class="link_homepage" href='/'>Homepage</a>
+                            </div>
                             <div class="create">
                                 <div class="create_icon"></div>
                                 <a class="link_create" href="/notes/create/">Create note</a>
@@ -26,7 +30,7 @@
                                 <div class="username_icon"></div>
                             </div>
                             <div class="logout">
-                                <h2 class="logout_text">logout</h2>
+                                <a href="/auth/logout" class="logout_text">logout</a>
                                 <div class="logout_icon"></div>
                             </div>
                         </div>
@@ -38,7 +42,7 @@
                 <div class="section-create-wrapper__main__box">
                     <div class="section-create-wrapper__main__box__image"></div>
                     <div class="block_createform">
-                        <h1 class="create_text">Create Form</h1>
+                        <h1 class="create_text">Create Note</h1>
                         <form class="creation" action="" method="post" enctype='multipart/form-data'>
                             {% csrf_token %}
                         
