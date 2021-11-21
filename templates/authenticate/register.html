@@ -19,7 +19,14 @@
                         {% csrf_token %}
                         {{ form.as_p }}
                         <button class="submit">Sign In</button>
-                    </form>
+                </form>
+            </div>
+            <div class="password_rules">
+                <h1>*Your password mustn`t be:</h1>
+                <h5>too similar,</h5>
+                <h5>too short,</h5>
+                <h5>too common.</h5>
+                <h5>It must contain at least 8 characters.</h5>
             </div>
         </div>
     </div>

@@ -280,6 +280,26 @@
                     }
                 }
             }
+            .password_rules {
+                position: absolute;
+                bottom: 15px;
+                left: 5px;
+                h1 {
+                    color: #000000;
+                    font-family: 'Montserrat Alternates', sans-serif;
+                    font-size: 16px;
+                    width: 310px;
+                    font-weight: bold;
+                }
+                h5 {
+                    color: #000000;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 12px;
+                    width: 310px;
+                    font-weight: 100;
+                    display: inline;
+                }
+            }
         }
     }
 }

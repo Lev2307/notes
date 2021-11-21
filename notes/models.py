@@ -7,8 +7,7 @@ User = settings.AUTH_USER_MODEL
 class Note(models.Model):
 
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-    header = models.CharField(max_length = 30)
+    header = models.CharField(max_length = 35)
     date = models.DateField(auto_now_add=True)
-    text = models.CharField(max_length = 200)
+    text = models.CharField(max_length = 150)
     is_important = models.BooleanField(null=True)
-

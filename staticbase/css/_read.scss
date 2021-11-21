@@ -1,4 +1,4 @@
-.section-create {
+.section-read {
     height: 100vh;
     background: linear-gradient(135deg, #F05F57 0%, #360940 100%);
     &-wrapper {
@@ -96,14 +96,14 @@
             #menuToggle input:checked ~ #menu {
                 transform: scale(1.0, 1.0);
             }
-            .block-links_c {
+            .block-links_r {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 justify-content: flex-start;
                 align-items: flex-start;
                 margin-top: 10px;
-                .homepage_c {
+                .homepage_r {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -120,7 +120,7 @@
                             height: 29px;
                         }
                     }
-                    .link_homepage_c {
+                    .link_homepage_r {
                         text-decoration: none;
                         color: #000;
                         font-size: 21px;
@@ -134,10 +134,10 @@
                         }
                     }
                 }
-                .homepage_c:hover {
+                .homepage_r:hover {
                     opacity: 0.6;
                 }
-                .create_c {
+                .create_r {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -155,7 +155,7 @@
                             height: 29px;
                         }
                     }
-                    .link_create_c {
+                    .link_create_r {
                         text-decoration: none;
                         color: #000;
                         font-size: 21px;
@@ -169,10 +169,10 @@
                         }
                     }
                 }
-                .create_c:hover {
+                .create_r:hover {
                     opacity: 0.6;
                 }
-                .read_c {
+                .read_r {
                     margin-top: 15px;
                     display: flex;
                     justify-content: center;
@@ -190,7 +190,7 @@
                             height: 29px;                                                                                   
                         }
                     }
-                    .link_read_c {
+                    .link_read_r {
                         text-decoration: none;
                         color: #000;
                         font-size: 21px;
@@ -204,11 +204,11 @@
                         }
                     }
                 }
-                .read_c:hover {
+                .read_r:hover {
                     opacity: 0.6;
                 }
             }
-            .bottom_c {
+            .bottom_r {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
@@ -216,14 +216,14 @@
                 position: absolute;
                 bottom: 130px;
                 left: 10px;
-                .username_c {
+                .username_r {
                     margin-left: 35px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
                     transition: 0.3s ease-in-out;
-                    .profile_name {
+                    .profile_name_r {
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-style: normal;
                         font-weight: 600;
@@ -241,10 +241,10 @@
                         height: 27px;
                     }
                 }
-                .username_c:hover {
+                .username_r:hover {
                     opacity: 0.6;
                 }
-                .logout_c {
+                .logout_r {
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -270,7 +270,7 @@
                         height: 27px;
                     }
                 }
-                .logout_c:hover {
+                .logout_r:hover {
                     opacity: 0.6;
                 }
             }
@@ -287,133 +287,67 @@
                 }
             }
         }
-        &__main {
+        &__notesblock {
+            width: 80%;
+            height: 85%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            &__box {
-                width: 835px;
-                height: 500px;
-                background: #FFFFFF;
-                box-shadow: 40px 40px 50px rgba(0, 0, 0, 0.25);
-                border-radius: 10px;
+            .pagination {
                 display: flex;
+                flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                @include media('>=LGdesktop') {
-                    width: 1035px;
-                    height: 700px;
-                }
-                &__image {
-                    background: url('../media/create_and_read_images/human.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    width: 400px;
-                    height: 500px;
-                    @include media('>=LGdesktop') {
-                        width: 500px;
-                        height: 660px;
-                    }
-                }
-                .block_createform {
+                width: 600px;
+                .step-links {
                     display: flex;
-                    flex-direction: column;
+                    justify-content: center;
                     align-items: center;
-                    width: 400px;
-                    height: 330px;
-                    @include media('>=LGdesktop') {
-                        height: 370px;
+                    .previous {
+                        background: url('../media/create_and_read_images/arrow.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 5px;
                     }
-                    .create_text {
+                    .next {
+                        background: url('../media/create_and_read_images/arrow.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 25px;
+                        height: 25px;
+                        transform: rotate(180deg);
+                        margin-left: 5px;
+                    }
+                }
+                .numbers {
+                    .first_num {
+                        color: #000;
                         font-family: 'Montserrat Alternates', sans-serif;
                         font-style: normal;
-                        font-weight: bolder;
-                        font-size: 32px;
-                        text-align: center;
-                        color: #000000;
-                        @include media('>=LGdesktop') {
-                            font-size: 39px;
-                        }
+                        font-weight: 600;
+                        font-size: 19px;
+                        margin-left: 10px;
+                        text-decoration: none;
                     }
-                    .creation {
-                        margin-top: 30px;
-                        p {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: flex-start;
-                            align-items: flex-start;
-                            label[for=id_header] {
-                                font-family: 'Montserrat', sans-serif;
-                                font-style: italic;
-                                font-weight: 300;
-                                font-size: 16px;
-                                text-align: center;
-                                color: #000000;
-                                @include media('>=LGdesktop') {
-                                    font-size: 19px;
-                                }
-                            }
-                            .header_field {
-                                width: 330px;
-                                height: 50px;
-                                background: #FFFFFF;
-                                border: 3px solid #000000;
-                                box-sizing: border-box;
-                                border-radius: 10px;
-                                margin-top: 10px;
-                                text-indent: 15px;
-                                @include media('>=LGdesktop') {
-                                    width: 380px;
-                                    height: 60px;
-                                }
-                            }
-                        }
-                        label[for=id_text] {
-                            font-family: 'Montserrat', sans-serif;
-                            font-style: italic;
-                            font-weight: 300;
-                            font-size: 16px;
-                            text-align: center;
-                            color: #000000;
-                            margin-top: 30px;
-                            @include media('>=LGdesktop') {
-                                font-size: 19px;
-                            }
-                        }
-                        .text_field {
-                            width: 330px;
-                            height: 50px;
-                            background: #FFFFFF;
-                            border: 3px solid #000000;
-                            box-sizing: border-box;
-                            border-radius: 10px;
-                            margin-top: 10px;
-                            text-indent: 15px;
-                            @include media('>=LGdesktop') {
-                                width: 380px;
-                                height: 60px;
-                            }
-                        }
-                        .submit {
-                            border: none;
-                            width: 250px;
-                            height: 60px;
-                            color: #fff;
-                            font-family: 'Montserrat Alternates', sans-serif;
-                            font-style: normal;
-                            font-weight: 700;
-                            font-size: 23px;
-                            background: #4BCE1C;
-                            border-radius: 67px;
-                            margin-top: 30px;
-                            margin-left: 25px;
-                            @include media('>=LGdesktop') {
-                                width: 300px;
-                                height: 65px;
-                                margin-left: 30px;
-                                margin-top: 45px;
-                            }
-                        }
+                    .current {
+                        color: #4BCE1C;
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 19px;
+                        border-bottom: 1px solid #4BCE1C;
+                    }
+                    .last_num {
+                        color: #000;
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 19px;
+                        margin-left: 10px;
+                        text-decoration: none;
                     }
                 }
             }

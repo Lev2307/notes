@@ -1,4 +1,4 @@
-
+from django.http import request
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
@@ -7,7 +7,7 @@ from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, ListView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Note
 from .forms import CreateNoteModelForm
 import math
@@ -22,7 +22,8 @@ class HomePageView(View):
         user = request.user
         return render(request, 'index.html', {'profile': user})
 
-class CreateNoteView(CreateView):
+
+class CreateNoteView(LoginRequiredMixin, CreateView):
     template_name = 'notes/create.html'
 
     def get(self, request, *args, **kwargs):
@@ -36,35 +37,16 @@ class CreateNoteView(CreateView):
             obj = form.save(commit=False)
             obj.author = request.user
             obj.save()
-            return render(request, 'notes/create.html', {"form": form,
-                                                         'obj': obj})
+            return render(request, 'notes/create.html', {"form": form,'obj': obj})
 
-class ReadNotesView(ListView):
+class ReadNotesView(LoginRequiredMixin, ListView):
+    model = Note
     template_name = 'notes/read.html'
     context_object_name = 'notes'
+    paginate_by = 2
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['notes'] = context['notes'].filter(user=self.request.user)
+        context['user'] = self.request.user
         return context
-
-    def get(self, request, *args, **kwargs):
-        qs = Note.objects.all()
-        page = int(request.GET.get('page', 1))
-        paginate_by = 6
-        start_index = (page * paginate_by) - paginate_by
-        end_index = page * paginate_by
-        pages_count = math.ceil(len(qs) / paginate_by)
-        
-        if page > pages_count:
-            return redirect(f'/notes/read/?page={pages_count}')
-        elif page < 1:
-            return redirect('/notes/read/?page=1')
-
-        return render(request, 'notes/read.html', {'data_list': qs[start_index:end_index],
-                                                   'next': page + 1,
-                                                   'prev': page - 1,
-                                                   'pages_count': pages_count,
-                                                   'pages_count_list': range(1, pages_count+1)})
-
     
