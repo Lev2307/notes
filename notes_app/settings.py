@@ -116,6 +116,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+TIME_INPUT_FORMATS = ('H',)
+
 LOGIN_URL = 'auth/login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

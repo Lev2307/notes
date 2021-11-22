@@ -289,7 +289,7 @@
         }
         &__notesblock {
             width: 80%;
-            height: 85%;
+            height: 80%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -337,6 +337,116 @@
                     text-decoration: none;
                     margin-left: 10px;
                 } 
+            }
+            .notes_block {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+                width: 80%;
+                .note {
+                    background-color: #fff;
+                    width: 280px;
+                    height: 250px;
+                    border: none;
+                    border-radius: 10px;
+                    margin-left: 20px;
+                    margin-top: 20px;
+                    position: relative;
+                    &_top {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        margin-top: 5px;
+                        .note_header {
+                            margin-left: 20px;
+                            margin-top: 5px;
+                            .header {
+                                font-family: 'Montserrat Alternates', sans-serif;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 13px;
+                                color: #000000;
+                                text-align: center;
+                                line-height: 23px;
+                                word-wrap: break-word;
+                                max-width: 130px;
+                            }
+                        }
+                        .note_date {
+                            margin-right: 20px;
+                            margin-top: 5px;
+                            .date {
+                                font-family: 'Montserrat Alternates', sans-serif;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 10px;
+                                line-height: 20px;
+                                text-align: center;
+                                color: #4BCE1C;
+                            }
+                        }
+                    }
+                    &_middle {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 50px;
+                        .text {
+                            font-family: 'Montserrat Alternates', sans-serif;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 25px;
+                            letter-spacing: 0.1px;
+                            text-align: center;
+                            color: #000000;
+                            max-width: 95%;
+                            word-wrap: break-word;
+                        }
+                    }
+                    &_bottom {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 300px;
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        .mark {
+                            .marker_button {
+                                background: url('../media/create_and_read_images/marker.png');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                width: 22px;
+                                height: 22px;
+                            }
+                        }
+                        .upd_del {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-right: 35px;
+                            .update_btn {
+                                background: url('../media/create_and_read_images/update.png');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                width: 22px;
+                                height: 22px;
+                                cursor: pointer;
+                            }
+                            .del_btn {
+                                background: url('../media/create_and_read_images/trashbin.png');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                width: 22px;
+                                height: 20px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

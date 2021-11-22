@@ -49,18 +49,39 @@
                         <a class="next" href="?page={{next}}"></a>
                     {% endif %}
                 </div>
-                {% for note in notes_list %}
+                <div class="notes_block">
+                    {% for note in notes_list %}
                     <div class="note">
                         <div class="note_top">
                             <div class="note_header">
-                                <h1>{{ note.header }}</h1>
+                                <h1 class="header">{{ note.header }}</h1>
                             </div>
-                            <p>{{ note.date }}</p>
+                            <div class="note_date">
+                                <h6 class="date">{{ note.date|date:"Y-m-d" }}</h6>
+                            </div>
+                        </div>
+                        <div class="note_middle">
+                            <p class="text">{{ note.text }}</p>
+                        </div>
+                        <div class="note_bottom">
+                            <div class="mark">
+                                <div class="marker_button"></div>
+                            </div>
+                            <div class="upd_del">
+                                <div class="update_btn"></div>
+                                <div class="del_btn"></div>
+                            </div>
                         </div>
                     </div>
-                    <p>{{ note.text }}</p>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </section>
+    <script>
+        let header = document.querySelector('.header');
+        if (header.length >= 15) {
+            header.classList.add('big')
+        }
+    </script>
 {% endblock %}

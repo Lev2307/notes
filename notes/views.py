@@ -41,7 +41,7 @@ class CreateNoteView(LoginRequiredMixin, CreateView):
 
 class ReadNotesView(LoginRequiredMixin, ListView):
     template_name = 'notes/read.html'
-    paginate_by = 2
+    paginate_by = 4
 
     def get(self, request, *args, **kwargs):
         qs = Note.objects.all()
