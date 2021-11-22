@@ -1888,6 +1888,13 @@
   margin-right: 5px;
 }
 
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .pagination .prev {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 .section-read-wrapper__notesblock .pagination .next {
   background: url("../media/create_and_read_images/arrow.png");
   background-repeat: no-repeat;
@@ -1899,6 +1906,13 @@
   margin-left: 5px;
 }
 
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .pagination .next {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 .section-read-wrapper__notesblock .pagination .page {
   color: #000;
   font-family: 'Montserrat Alternates', sans-serif;
@@ -1908,6 +1922,12 @@
   text-align: center;
   text-decoration: none;
   margin-left: 10px;
+}
+
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .pagination .page {
+    font-size: 23px;
+  }
 }
 
 .section-read-wrapper__notesblock .pagination .p {
@@ -1946,6 +1966,13 @@
   position: relative;
 }
 
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note {
+    width: 350px;
+    height: 320px;
+  }
+}
+
 .section-read-wrapper__notesblock .notes_block .note_top {
   width: 100%;
   display: -webkit-box;
@@ -1976,6 +2003,13 @@
   max-width: 130px;
 }
 
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note_top .note_header .header {
+    font-size: 18px;
+    max-width: 170px;
+  }
+}
+
 .section-read-wrapper__notesblock .notes_block .note_top .note_date {
   margin-right: 20px;
   margin-top: 5px;
@@ -1989,6 +2023,12 @@
   line-height: 20px;
   text-align: center;
   color: #4BCE1C;
+}
+
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note_top .note_date .date {
+    font-size: 14px;
+  }
 }
 
 .section-read-wrapper__notesblock .notes_block .note_middle {
@@ -2017,6 +2057,12 @@
   word-wrap: break-word;
 }
 
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note_middle .text {
+    font-size: 20px;
+  }
+}
+
 .section-read-wrapper__notesblock .notes_block .note_bottom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2039,6 +2085,14 @@
   background-size: contain;
   width: 22px;
   height: 22px;
+  cursor: pointer;
+}
+
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note_bottom .mark .marker_button {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .section-read-wrapper__notesblock .notes_block .note_bottom .upd_del {
@@ -2054,6 +2108,12 @@
   margin-right: 35px;
 }
 
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note_bottom .upd_del {
+    margin-right: 0;
+  }
+}
+
 .section-read-wrapper__notesblock .notes_block .note_bottom .upd_del .update_btn {
   background: url("../media/create_and_read_images/update.png");
   background-repeat: no-repeat;
@@ -2063,13 +2123,27 @@
   cursor: pointer;
 }
 
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note_bottom .upd_del .update_btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
 .section-read-wrapper__notesblock .notes_block .note_bottom .upd_del .del_btn {
-  background: url("../media/create_and_read_images/trashbin.png");
+  background: url("../media/create_and_read_images/delete.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 22px;
   height: 20px;
   cursor: pointer;
+}
+
+@media (min-width: 1400px) {
+  .section-read-wrapper__notesblock .notes_block .note_bottom .upd_del .del_btn {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .section-reg {

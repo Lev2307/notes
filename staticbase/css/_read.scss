@@ -307,6 +307,10 @@
                     width: 25px;
                     height: 25px;
                     margin-right: 5px;
+                    @include media('>=LGdesktop') {
+                        width: 35px;
+                        height: 35px;
+                    }
                 }
                 .next {
                     background: url('../media/create_and_read_images/arrow.png');
@@ -316,6 +320,10 @@
                     height: 25px;
                     transform: rotate(180deg);
                     margin-left: 5px;
+                    @include media('>=LGdesktop') {
+                        width: 35px;
+                        height: 35px;
+                    }
                 }
                 .page {
                     color: #000;
@@ -326,6 +334,9 @@
                     text-align: center;
                     text-decoration: none;
                     margin-left: 10px;
+                    @include media('>=LGdesktop') {
+                        font-size: 23px;
+                    }
                 }
                 .p {
                     color: green;
@@ -353,6 +364,10 @@
                     margin-left: 20px;
                     margin-top: 20px;
                     position: relative;
+                    @include media('>=LGdesktop') {
+                        width: 350px;
+                        height: 320px;
+                    }
                     &_top {
                         width: 100%;
                         display: flex;
@@ -372,6 +387,10 @@
                                 line-height: 23px;
                                 word-wrap: break-word;
                                 max-width: 130px;
+                                @include media('>=LGdesktop') {
+                                    font-size: 18px;
+                                    max-width: 170px;
+                                }
                             }
                         }
                         .note_date {
@@ -385,6 +404,9 @@
                                 line-height: 20px;
                                 text-align: center;
                                 color: #4BCE1C;
+                                @include media('>=LGdesktop') {
+                                    font-size: 14px;
+                                }
                             }
                         }
                     }
@@ -404,6 +426,9 @@
                             color: #000000;
                             max-width: 95%;
                             word-wrap: break-word;
+                            @include media('>=LGdesktop') {
+                                font-size: 20px;
+                            }
                         }
                     }
                     &_bottom {
@@ -421,6 +446,11 @@
                                 background-size: contain;
                                 width: 22px;
                                 height: 22px;
+                                cursor: pointer;
+                                @include media('>=LGdesktop') {
+                                    width: 28px;
+                                    height: 28px;
+                                }
                             }
                         }
                         .upd_del {
@@ -428,6 +458,9 @@
                             justify-content: center;
                             align-items: center;
                             margin-right: 35px;
+                            @include media('>=LGdesktop') {
+                                margin-right: 0;
+                            }
                             .update_btn {
                                 background: url('../media/create_and_read_images/update.png');
                                 background-repeat: no-repeat;
@@ -435,14 +468,22 @@
                                 width: 22px;
                                 height: 22px;
                                 cursor: pointer;
+                                @include media('>=LGdesktop') {
+                                    width: 28px;
+                                    height: 28px;
+                                }
                             }
                             .del_btn {
-                                background: url('../media/create_and_read_images/trashbin.png');
+                                background: url('../media/create_and_read_images/delete.png');
                                 background-repeat: no-repeat;
                                 background-size: contain;
                                 width: 22px;
                                 height: 20px;
                                 cursor: pointer;
+                                @include media('>=LGdesktop') {
+                                    width: 28px;
+                                    height: 28px;
+                                }
                             }
                         }
                     }
