@@ -39,32 +39,26 @@
             </div>
             <div class="section-read-wrapper__notesblock">
                 <div class="pagination">
-                    <span class="step-links">
-                        {% if page_obj.has_previous %}
-                            <a class="previous" href="?page={{ page_obj.previous_page_number }}"></a>
-                        {% endif %}
-                        <div class="numbers">
-                            <span class="first_num">
-                                <a class="first_num" href="?page=1">1</a>
-                            </span>
-                            {% if page_obj.number %}
-                                <span class="current">{{ page_obj.number }}</span>
-                            </span>
-                            {% endif %}
-                            <span class="last_num">
-                                <a class="last_num" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
-                            </span>
-                        </div>
-                        {% if page_obj.has_next %}
-                            <a class="next" href="?page={{ page_obj.next_page_number }}"></a>
-                        {% endif %}
-                    </span>
+                    {% if prev > 0 %}
+                        <a class="prev" href="?page={{prev}}"></a>
+                    {% endif %}
+                    {% for page in pages_count_list %}
+                        <a class="page" href="?page={{page}}">{{page}}</a>
+                    {% endfor %}
+                    {% if next <= pages_count %}
+                        <a class="next" href="?page={{next}}"></a>
+                    {% endif %}
                 </div>
-                </span>
-                {% for item in notes %}
-                    <h1>{{ item.header }}</h1>
-                    <p>{{ item.date }}</p>
-                    <p>{{ item.text }}</p>
+                {% for note in notes_list %}
+                    <div class="note">
+                        <div class="note_top">
+                            <div class="note_header">
+                                <h1>{{ note.header }}</h1>
+                            </div>
+                            <p>{{ note.date }}</p>
+                        </div>
+                    </div>
+                    <p>{{ note.text }}</p>
                 {% endfor %}
             </div>
         </div>

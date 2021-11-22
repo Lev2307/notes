@@ -300,56 +300,43 @@
                 justify-content: center;
                 align-items: center;
                 width: 600px;
-                .step-links {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    .previous {
-                        background: url('../media/create_and_read_images/arrow.png');
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        width: 25px;
-                        height: 25px;
-                        margin-right: 5px;
-                    }
-                    .next {
-                        background: url('../media/create_and_read_images/arrow.png');
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        width: 25px;
-                        height: 25px;
-                        transform: rotate(180deg);
-                        margin-left: 5px;
-                    }
+                .prev {
+                    background: url('../media/create_and_read_images/arrow.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 5px;
                 }
-                .numbers {
-                    .first_num {
-                        color: #000;
-                        font-family: 'Montserrat Alternates', sans-serif;
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 19px;
-                        margin-left: 10px;
-                        text-decoration: none;
-                    }
-                    .current {
-                        color: #4BCE1C;
-                        font-family: 'Montserrat Alternates', sans-serif;
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 19px;
-                        border-bottom: 1px solid #4BCE1C;
-                    }
-                    .last_num {
-                        color: #000;
-                        font-family: 'Montserrat Alternates', sans-serif;
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 19px;
-                        margin-left: 10px;
-                        text-decoration: none;
-                    }
+                .next {
+                    background: url('../media/create_and_read_images/arrow.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 25px;
+                    height: 25px;
+                    transform: rotate(180deg);
+                    margin-left: 5px;
                 }
+                .page {
+                    color: #000;
+                    font-family: 'Montserrat Alternates', sans-serif;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    text-align: center;
+                    text-decoration: none;
+                    margin-left: 10px;
+                }
+                .p {
+                    color: green;
+                    font-family: 'Montserrat Alternates', sans-serif;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    text-align: center;
+                    text-decoration: none;
+                    margin-left: 10px;
+                } 
             }
         }
     }

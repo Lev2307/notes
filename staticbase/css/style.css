@@ -1879,19 +1879,7 @@
   width: 600px;
 }
 
-.section-read-wrapper__notesblock .pagination .step-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.section-read-wrapper__notesblock .pagination .step-links .previous {
+.section-read-wrapper__notesblock .pagination .prev {
   background: url("../media/create_and_read_images/arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -1900,7 +1888,7 @@
   margin-right: 5px;
 }
 
-.section-read-wrapper__notesblock .pagination .step-links .next {
+.section-read-wrapper__notesblock .pagination .next {
   background: url("../media/create_and_read_images/arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -1911,33 +1899,26 @@
   margin-left: 5px;
 }
 
-.section-read-wrapper__notesblock .pagination .numbers .first_num {
+.section-read-wrapper__notesblock .pagination .page {
   color: #000;
   font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 19px;
-  margin-left: 10px;
+  font-size: 16px;
+  text-align: center;
   text-decoration: none;
+  margin-left: 10px;
 }
 
-.section-read-wrapper__notesblock .pagination .numbers .current {
-  color: #4BCE1C;
+.section-read-wrapper__notesblock .pagination .p {
+  color: green;
   font-family: 'Montserrat Alternates', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 19px;
-  border-bottom: 1px solid #4BCE1C;
-}
-
-.section-read-wrapper__notesblock .pagination .numbers .last_num {
-  color: #000;
-  font-family: 'Montserrat Alternates', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 19px;
-  margin-left: 10px;
+  font-size: 16px;
+  text-align: center;
   text-decoration: none;
+  margin-left: 10px;
 }
 
 .section-reg {
