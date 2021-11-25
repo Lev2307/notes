@@ -6,11 +6,13 @@ from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Note
 from .forms import CreateNoteModelForm
 import math
+
+
 
 # Create your views here.
 
@@ -24,23 +26,13 @@ class HomePageView(View):
 
 
 class CreateNoteView(LoginRequiredMixin, CreateView):
-    template_name = 'notes/create.html'
-
-    def get(self, request, *args, **kwargs):
-        form = CreateNoteModelForm(request.POST or None)
-        user = request.user
-        return render(request, 'notes/create.html', {'form': form, 'profile': user})
-
-    def post(self, request, *args, **kwargs):
-        form = CreateNoteModelForm(request.POST)
-        if form.is_valid():
-            obj = form.save(commit=False)
-            obj.author = request.user
-            obj.save()
-            return render(request, 'notes/create.html', {"form": form,'obj': obj})
+    model = Note
+    form_class = CreateNoteModelForm
+    template_name = 'notes/create_note.html'
+    success_url = reverse_lazy('read_notes')
 
 class ReadNotesView(LoginRequiredMixin, ListView):
-    template_name = 'notes/read.html'
+    template_name = 'notes/read_notes.html'
     paginate_by = 4
 
     def get(self, request, *args, **kwargs):
@@ -55,10 +47,21 @@ class ReadNotesView(LoginRequiredMixin, ListView):
         elif page < 1:
             return redirect('/notes/read/?page=1')
 
-        return render(request, 'notes/read.html', { 'notes_list': qs[start_index:end_index],
+        return render(request, 'notes/read_notes.html', { 'notes_list': qs[start_index:end_index],
                                                     'current_page': page,
                                                     'next': page + 1,
                                                     'prev': page - 1,
                                                     'pages_count': pages_count,
                                                     'pages_count_list': range(1, pages_count+1)})
-    
+
+class UpdateNoteView(LoginRequiredMixin, UpdateView):
+    model = Note
+    form_class = CreateNoteModelForm
+    template_name = 'notes/edit_note.html'
+    success_url = reverse_lazy('read_notes')
+
+class DeleteNoteView(LoginRequiredMixin, UpdateView):
+    model = Note
+    fields = '__all__'
+    template_name = 'notes/delete_note.html'
+    success_url = reverse_lazy('read_notes')

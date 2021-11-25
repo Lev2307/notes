@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post" autofill='None'>
+        <p>Are you sure to delete this note?</p>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Delete Note</button>
+    </form>
+{% endblock content %}
