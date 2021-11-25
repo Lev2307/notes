@@ -60,8 +60,8 @@ class UpdateNoteView(LoginRequiredMixin, UpdateView):
     template_name = 'notes/edit_note.html'
     success_url = reverse_lazy('read_notes')
 
-class DeleteNoteView(LoginRequiredMixin, UpdateView):
+class DeleteNoteView(LoginRequiredMixin, DeleteView):
     model = Note
-    fields = '__all__'
     template_name = 'notes/delete_note.html'
     success_url = reverse_lazy('read_notes')
+    context_object_name = 'notes'
