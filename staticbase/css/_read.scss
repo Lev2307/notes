@@ -340,25 +340,15 @@
                 }
                 .current {
                     color: #4BCE1C;
-
+                    border-bottom: 1px solid #4BCE1C;
                 }
-                .p {
-                    color: green;
-                    font-family: 'Montserrat Alternates', sans-serif;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 16px;
-                    text-align: center;
-                    text-decoration: none;
-                    margin-left: 10px;
-                } 
             }
             .notes_block {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
                 align-items: center;
-                width: 80%;
+                width: 70%;
                 .note {
                     background-color: #fff;
                     width: 280px;
