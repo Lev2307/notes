@@ -1930,6 +1930,11 @@
   }
 }
 
+.section-read-wrapper__notesblock .pagination .current {
+  color: #4BCE1C;
+  text_decoration: underline;
+}
+
 .section-read-wrapper__notesblock .pagination .p {
   color: green;
   font-family: 'Montserrat Alternates', sans-serif;

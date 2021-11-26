@@ -43,7 +43,11 @@
                         <a class="prev" href="?page={{prev}}"></a>
                     {% endif %}
                     {% for page in pages_count_list %}
-                        <a class="page" href="?page={{page}}">{{page}}</a>
+                        {% if page == current_page %}
+                            <a class="page current" href="?page={{page}}">{{page}}</a>
+                        {% else %}
+                            <a class="page" href="?page={{page}}">{{page}}</a>
+                        {% endif %}
                     {% endfor %}
                     {% if next <= pages_count %}
                         <a class="next" href="?page={{next}}"></a>
@@ -68,8 +72,8 @@
                                 <div class="marker_button"></div>
                             </div>
                             <div class="upd_del">
-                                <a href="edit_note/{{ note.id }}/" class="update_btn"></a>
-                                <a href="delete_note/{{ note.id }}/"class="del_btn"></a>
+                                <a href="/notes/edit/{{ note.id }}/" class="update_btn"></a>
+                                <a href="/notes/delete/{{ note.id }}/"class="del_btn"></a>
                             </div>
                         </div>
                     </div>

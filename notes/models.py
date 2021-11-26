@@ -11,3 +11,8 @@ class Note(models.Model):
     date = models.DateField(auto_now=True)
     text = models.CharField(max_length = 150)
     is_important = models.BooleanField(null=True)
+
+
+class Collections(models.Model):
+    
+    notes = models.ManyToManyField(Note)
