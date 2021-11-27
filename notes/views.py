@@ -1,5 +1,4 @@
-from django.http import request
-from django.shortcuts import render
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
@@ -8,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Note
+from .models import Note, Collections
 from .forms import CreateNoteModelForm
 import math
 
@@ -31,12 +30,18 @@ class CreateNoteView(LoginRequiredMixin, CreateView):
     template_name = 'notes/create_note.html'
     success_url = reverse_lazy('read_notes')
 
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
 class ReadNotesView(LoginRequiredMixin, ListView):
     template_name = 'notes/read_notes.html'
-    paginate_by = 4
+    paginate_by = 6
 
     def get(self, request, *args, **kwargs):
-        qs = Note.objects.all()
+        qs = Note.objects.filter(user = request.user)
         page = int(request.GET.get('page', 1))
         start_index = (page * self.paginate_by) - self.paginate_by
         end_index = page * self.paginate_by
@@ -65,3 +70,6 @@ class DeleteNoteView(LoginRequiredMixin, DeleteView):
     template_name = 'notes/delete_note.html'
     success_url = reverse_lazy('read_notes')
     context_object_name = 'notes'
+
+class CreateCollection(LoginRequiredMixin, CreateView):
+    model = Collections

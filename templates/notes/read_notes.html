@@ -78,6 +78,10 @@
                         </div>
                     </div>
                 {% endfor %}
+                <!-- <a href="/notes/collections/create"> -->
+                    <button id='create_collection_button'>Create collection</button>
+                <!-- </a> -->
+
                 </div>
             </div>
         </div>
@@ -87,5 +91,9 @@
         if (header.length >= 15) {
             header.classList.add('big')
         }
+        // let createCollectionButton = document.querySelector('#create_collection_button')
+        // createCollectionButton.onclick = function(event) {
+        //     createCollectionButton.style.marginTop = '20px'
+        // }
     </script>
 {% endblock %}
