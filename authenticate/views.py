@@ -18,6 +18,5 @@ class LoginView(LoginView):
     success_url = reverse_lazy('homepage')
 
 class LogoutView(LogoutView):
-    redirect_field_name = 'homepage'
-    next_page = None
+    redirect_field_name = reverse_lazy("homepage")
     template_name = "index.html"

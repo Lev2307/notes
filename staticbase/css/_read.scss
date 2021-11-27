@@ -486,3 +486,44 @@
         }
     }
 }
+.section-read_new {
+    height: 100vh;
+    background: linear-gradient(135deg, #F05F57 0%, #360940 100%);
+    &-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .no_notes {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &_text {
+                font-family: 'Montserrat Alternates', sans-serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 26px;
+                letter-spacing: 0.1px;
+                text-align: center;
+                color: #000000;
+            }
+            &_link {
+                .link {
+                    font-family: 'Montserrat Alternates', sans-serif;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 26px;
+                    letter-spacing: 0.1px;
+                    text-align: center;
+                    text-decoration: wavy underline;
+                    color: #fff;
+                    transition: 0.3s ease-in;
+                }
+                .link:hover {
+                    color: rgba(182, 182, 182, 0.5);
+                }
+            }
+        }
+    }
+}

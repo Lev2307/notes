@@ -47,10 +47,13 @@ class ReadNotesView(LoginRequiredMixin, ListView):
         end_index = page * self.paginate_by
         pages_count = math.ceil(len(qs) / self.paginate_by)
 
-        if page > pages_count:
-            return redirect(f'/notes/read/?page={pages_count}')
-        elif page < 1:
-            return redirect('/notes/read/?page=1')
+        if page > 0:
+            if page > pages_count:
+                return redirect(f'/notes/read/?page={pages_count}')
+            elif page < 1:
+                return redirect('/notes/read/?page=1')
+        else:
+            return render(request, 'notes/read_notes.html')
 
         return render(request, 'notes/read_notes.html', { 'notes_list': qs[start_index:end_index],
                                                     'current_page': page,

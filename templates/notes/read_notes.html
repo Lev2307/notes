@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% if notes_list|length > 0 %}
     <section class="section-read">
         <div class="section-read-wrapper">
             <div class="section-read-wrapper__header">
@@ -77,23 +78,19 @@
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-                <!-- <a href="/notes/collections/create"> -->
-                    <button id='create_collection_button'>Create collection</button>
-                <!-- </a> -->
-
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </section>
-    <script>
-        let header = document.querySelector('.header');
-        if (header.length >= 15) {
-            header.classList.add('big')
-        }
-        // let createCollectionButton = document.querySelector('#create_collection_button')
-        // createCollectionButton.onclick = function(event) {
-        //     createCollectionButton.style.marginTop = '20px'
-        // }
-    </script>
+    {% else %}
+    <section class="section-read_new">
+        <div class="section-read_new-wrapper">
+            <div class="no_notes">
+                <h3 class="no_notes_text">No new tasks are created</h3>
+                <h3 class="no_notes_link"><a class="link" href="/notes/create/">Create a new one!</a></h3>
+            </div>
+        </div>
+    </section>
+    {% endif %}
 {% endblock %}
