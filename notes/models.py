@@ -13,9 +13,9 @@ class Collections(models.Model):
 class Note(models.Model):
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     collection = models.ForeignKey(Collections, null=True, on_delete=models.SET_NULL)
-    header = models.CharField(max_length = 30)
+    header = models.CharField(max_length = 40)
     date = models.DateField(auto_now=True)
-    text = models.CharField(max_length = 150)
+    text = models.TextField(max_length = 170)
     is_important = models.BooleanField(null=True)
 
     class Meta:

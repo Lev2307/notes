@@ -43,7 +43,7 @@
                     <div class="section-create-wrapper__main__box__image"></div>
                     <div class="block_createform">
                         <h1 class="create_text">Create Note</h1>
-                        <form class="creation" action="" method="post" enctype='multipart/form-data'>
+                        <form class="creation" action="" method="post" enctype='multipart/form-data' autocomplete="off">
                             {% csrf_token %}
                         
                             {{ form.as_p }}
