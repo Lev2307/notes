@@ -156,7 +156,7 @@
                         }
                     }
                     .link_create_c {
-                        text-decoration: none;
+                        text-decoration: underline dashed;
                         color: #000;
                         font-size: 21px;
                         font-family: 'Montserrat Alternates', sans-serif;
@@ -211,39 +211,11 @@
             .bottom_c {
                 width: 100%;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
                 align-items: center;
                 position: absolute;
                 bottom: 130px;
                 left: 10px;
-                .username_c {
-                    margin-left: 35px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    cursor: pointer;
-                    transition: 0.3s ease-in-out;
-                    .profile_name {
-                        font-family: 'Montserrat Alternates', sans-serif;
-                        font-style: normal;
-                        font-weight: 600;
-                        font-size: 16px;
-                        text-align: center;
-                        letter-spacing: 0.1em;
-                        color: #000000;
-                        transition: 0.5s;
-                    }
-                    &_icon {
-                        background: url('../media/login_and_reg_images/account.png');
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        width: 27px;
-                        height: 27px;
-                    }
-                }
-                .username_c:hover {
-                    opacity: 0.6;
-                }
                 .logout_c {
                     display: flex;
                     justify-content: center;
@@ -320,7 +292,7 @@
                     flex-direction: column;
                     align-items: center;
                     width: 400px;
-                    height: 330px;
+                    height: 370px;
                     @include media('>=LGdesktop') {
                         height: 370px;
                     }
@@ -401,7 +373,8 @@
                             transition: 0.2s ease-in;
                             @include media('>=LGdesktop') {
                                 width: 380px;
-                                height: 80px;
+                                height: 90px;
+                                font-size: 14px;
                             }
                             &:focus {
                                 border: 3px solid #4BCE1C;

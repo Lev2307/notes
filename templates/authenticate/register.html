@@ -13,7 +13,7 @@
                 <div class="section-reg-wrapper__box__main__image"></div>
                     <form class="blockreg_form" action="" method="post">
                         {% if form.errors %}
-                            <p class="error">Passwords does not match. Please try again</p>
+                            <p class="error">Passwords does not match or your password doesn`t include rules at the bottom of the box. Please try again</p>
                         {% endif %}
                         <h2 class="reg_text">Sign In</h2>
                         {% csrf_token %}

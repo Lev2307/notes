@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse
@@ -42,7 +42,6 @@ class CreateNoteView(LoginRequiredMixin, CreateView):
     form_class = CreateNoteModelForm
     template_name = 'notes/create_note.html'
     success_url = reverse_lazy('read_notes')
-
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
@@ -64,7 +63,7 @@ class DeleteNoteView(LoginRequiredMixin, DeleteView):
 
 class ReadNotesView(LoginRequiredMixin, ListView):
     template_name = 'notes/read_notes.html'
-    paginate_by = 6
+    paginate_by = 4
 
     def get(self, request, *args, **kwargs):
         notes = Note.objects.filter(user = request.user)
@@ -76,9 +75,9 @@ class ReadNotesView(LoginRequiredMixin, ListView):
 
         if page > 0:
             if page > pages_count:
-                return redirect(f'/notes/read/?page={pages_count}')
+                return redirect(f'/notes/read_note/?page={pages_count}')
             elif page < 1:
-                return redirect('/notes/read/?page=1')
+                return redirect('/notes/read_note/?page=1')
         else:
             return render(request, 'notes/read_notes.html')
 
@@ -90,7 +89,7 @@ class ReadNotesView(LoginRequiredMixin, ListView):
                                                          'pages_count': pages_count,
                                                          'pages_count_list': range(1, pages_count+1)})
     
-def create_collection(request):
+def create_collection(request, **kwargs):
     form = CreateCollectionModelForm(request.POST or None)
 
     if request.method == "POST":
@@ -114,3 +113,10 @@ def create_collection_form(request):
         "form": form
     }
     return render(request, "notes/collection_create_form.html", context)
+
+def delete_collection(request, pk):
+    col = get_object_or_404(Collection, id=pk)
+
+    if request.method == "POST":
+        col.delete()
+        return HttpResponse("")
