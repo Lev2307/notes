@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +26,9 @@ SECRET_KEY = 'deo@z+$ueyz%!_!_&8ggt%j2vcm*m!@q!$n5adsg$&3+7@xm20'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cryptic-badlands-65500.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ["127.0.0.1", 'localhost']
 
-
+#  'cryptic-badlands-65500.herokuapp.com'
 # Application definition
 
 INSTALLED_APPS = [
@@ -116,7 +117,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-TIME_INPUT_FORMATS = ('H',)
 
 LOGIN_URL = 'auth/login'
 LOGIN_REDIRECT_URL = '/'
@@ -134,7 +134,7 @@ STATICFILES_DIRS = [
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'staticbase' / 'media'
+MEDIA_ROOT = BASE_DIR / 'staticfiles' / 'media'
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
