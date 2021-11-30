@@ -5,7 +5,8 @@ from .views import (
     ReadNotesView,
     UpdateNoteView,
     DeleteNoteView,
-    CreateCollection,
+    create_collection,
+    create_collection_form,
 )
 
 urlpatterns = [
@@ -13,5 +14,6 @@ urlpatterns = [
     path('create/', CreateNoteView.as_view(), name='create_note'),
     path('delete/<int:pk>/', DeleteNoteView.as_view(), name='delete_note'),
     path('edit/<int:pk>/', UpdateNoteView.as_view(), name='edit_note'),
-    path('collections/create/', CreateCollection.as_view(), name='create_collection')
+    path('collection/create', create_collection, name='create_collection'),
+    path('collection/create_form/', create_collection_form, name='create_collection_form'),
 ]

@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div hx-target="this" hx-swap="outerHTML">
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" hx-post="{% url 'create_collection' %}">Submit</button>
+    </form>
+
+</div>
+{% endblock %}

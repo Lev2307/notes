@@ -77,11 +77,17 @@
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-                <!-- <a href="/notes/collections/create"> -->
-                    <button id='create_collection_button'>Create collection</button>
-                <!-- </a> -->
 
+                {% endfor %}
+                <button type="button" hx-get="{% url 'create_collection_form' %}" hx-target="#create_collections_forms" hx-swap="beforeend">
+                    Add form
+                </button>
+
+                <div id="create_collections_forms">
+                    {% for collection in collections %}
+                        <h1>{{ collection.name}}</h1>
+                    {% endfor %}
+                </div>
                 </div>
             </div>
         </div>

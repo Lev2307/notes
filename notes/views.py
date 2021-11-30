@@ -1,14 +1,27 @@
-
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
+from django.http import HttpResponse
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Note, Collections
-from .forms import CreateNoteModelForm
+
+from django.views.generic import (
+                                  CreateView,
+                                  ListView,
+                                  UpdateView,
+                                  DeleteView,
+                                    )
+from .models import (
+                     Note,
+                     Collection,
+                        )
+
+from .forms import (
+                    CreateCollectionModelForm,
+                    CreateNoteModelForm,
+                        )
 import math
 
 
@@ -36,28 +49,6 @@ class CreateNoteView(LoginRequiredMixin, CreateView):
         self.object.save()
         return super().form_valid(form)
 
-class ReadNotesView(LoginRequiredMixin, ListView):
-    template_name = 'notes/read_notes.html'
-    paginate_by = 6
-
-    def get(self, request, *args, **kwargs):
-        qs = Note.objects.filter(user = request.user)
-        page = int(request.GET.get('page', 1))
-        start_index = (page * self.paginate_by) - self.paginate_by
-        end_index = page * self.paginate_by
-        pages_count = math.ceil(len(qs) / self.paginate_by)
-
-        if page > pages_count:
-            return redirect(f'/notes/read/?page={pages_count}')
-        elif page < 1:
-            return redirect('/notes/read/?page=1')
-
-        return render(request, 'notes/read_notes.html', { 'notes_list': qs[start_index:end_index],
-                                                    'current_page': page,
-                                                    'next': page + 1,
-                                                    'prev': page - 1,
-                                                    'pages_count': pages_count,
-                                                    'pages_count_list': range(1, pages_count+1)})
 
 class UpdateNoteView(LoginRequiredMixin, UpdateView):
     model = Note
@@ -71,5 +62,52 @@ class DeleteNoteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('read_notes')
     context_object_name = 'notes'
 
-class CreateCollection(LoginRequiredMixin, CreateView):
-    model = Collections
+class ReadNotesView(LoginRequiredMixin, ListView):
+    template_name = 'notes/read_notes.html'
+    paginate_by = 6
+
+    def get(self, request, *args, **kwargs):
+        notes = Note.objects.filter(user = request.user)
+        collections = Collection.objects.filter(user=request.user)
+        page = int(request.GET.get('page', 1))
+        start_index = (page * self.paginate_by) - self.paginate_by
+        end_index = page * self.paginate_by
+        pages_count = math.ceil(len(notes) / self.paginate_by)
+
+        if page > pages_count:
+            return redirect(f'/notes/read/?page={pages_count}')
+        elif page < 1:
+            return redirect('/notes/read/?page=1')
+
+        return render(request, 'notes/read_notes.html', {'notes_list': notes[start_index:end_index],
+                                                         'collections': collections,
+                                                         'current_page': page,
+                                                         'next': page + 1,
+                                                         'prev': page - 1,
+                                                         'pages_count': pages_count,
+                                                         'pages_count_list': range(1, pages_count+1)})
+    
+def create_collection(request):
+    form = CreateCollectionModelForm(request.POST or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            collection = form.save(commit=False)
+            collection.user = request.user
+            collection.save()
+            return HttpResponse(collection.name)
+        else:
+            return render(request, "notes/collection_create_form.html", context={
+                "form": form
+            })
+
+    return render(request, 'notes/read_notes.html', {
+                                                    'form': form,
+    })
+
+def create_collection_form(request):
+    form = CreateCollectionModelForm()
+    context = {
+        "form": form
+    }
+    return render(request, "notes/collection_create_form.html", context)
