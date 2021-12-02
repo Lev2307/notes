@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView
 
 from django.views.generic import (
                                   CreateView,
@@ -89,7 +90,7 @@ class ReadNotesView(LoginRequiredMixin, ListView):
                                                          'prev': page - 1,
                                                          'pages_count': pages_count,
                                                          'pages_count_list': range(1, pages_count+1)})
-    
+
 def create_collection(request):
     form = CreateCollectionModelForm(request.POST or None)
 
@@ -114,3 +115,4 @@ def create_collection_form(request):
         "form": form
     }
     return render(request, "notes/collection_create_form.html", context)
+
