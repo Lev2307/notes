@@ -12,15 +12,20 @@ class Collection(models.Model):
 
     def __str__(self):
         return self.name
-        
+    
+    
 
 class Note(models.Model):
     user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
     collection = models.ForeignKey(Collection, null=True, on_delete=models.SET_NULL)
     header = models.CharField(max_length = 30)
     date = models.DateField(auto_now=True)
-    text = models.CharField(max_length = 150)
+    text = models.TextField(max_length = 160)
     is_important = models.BooleanField(null=True, default=False)
+<<<<<<< HEAD
+=======
+
+>>>>>>> bb61eade0eb0dd77d576c27aef3a3cf07d835bbb
 
     class Meta:
         ordering = ['-date', 'is_important']

@@ -191,7 +191,7 @@
                         }
                     }
                     .link_read_r {
-                        text-decoration: none;
+                        text-decoration: underline dashed;
                         color: #000;
                         font-size: 21px;
                         font-family: 'Montserrat Alternates', sans-serif;
@@ -287,198 +287,213 @@
                 }
             }
         }
-        &__notesblock {
-            width: 80%;
-            height: 80%;
+        &__main {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
-            .pagination {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                width: 600px;
-                .prev {
-                    background: url('../media/create_and_read_images/arrow.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    width: 25px;
-                    height: 25px;
-                    margin-right: 5px;
-                    @include media('>=LGdesktop') {
-                        width: 35px;
-                        height: 35px;
-                    }
-                }
-                .next {
-                    background: url('../media/create_and_read_images/arrow.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    width: 25px;
-                    height: 25px;
-                    transform: rotate(180deg);
-                    margin-left: 5px;
-                    @include media('>=LGdesktop') {
-                        width: 35px;
-                        height: 35px;
-                    }
-                }
-                .page {
-                    color: #000;
-                    font-family: 'Montserrat Alternates', sans-serif;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 16px;
-                    text-align: center;
-                    text-decoration: none;
-                    margin-left: 10px;
-                    @include media('>=LGdesktop') {
-                        font-size: 23px;
-                    }
-                }
-                .current {
-                    color: #4BCE1C;
-                    border-bottom: 1px solid #4BCE1C;
-                }
+            height: 78%;
+            @include media('>=LGdesktop') {
+                height: 0%;
             }
-            .notes_block {
+            &__notes_block {
+                width: 80%;
+                height: 80%;
                 display: flex;
-                flex-wrap: wrap;
+                flex-direction: column;
                 justify-content: space-around;
                 align-items: center;
-                width: 70%;
-                .note {
-                    background-color: #fff;
-                    width: 280px;
-                    height: 250px;
-                    border: none;
-                    border-radius: 10px;
-                    margin-left: 20px;
-                    margin-top: 20px;
-                    position: relative;
-                    overflow-y: auto;
-                    overflow-x: hidden;
-                    @include media('>=LGdesktop') {
-                        width: 350px;
-                        height: 320px;
+                .pagination {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 600px;
+                    .prev {
+                        background: url('../media/create_and_read_images/arrow.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 5px;
+                        @include media('>=LGdesktop') {
+                            width: 35px;
+                            height: 35px;
+                        }
                     }
-                    &_top {
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-around;
-                        align-items: center;
-                        margin-top: 5px;
-                        height: 50px;
-                        .note_header {
-                            margin-left: 20px;
+                    .next {
+                        background: url('../media/create_and_read_images/arrow.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 25px;
+                        height: 25px;
+                        transform: rotate(180deg);
+                        margin-left: 5px;
+                        @include media('>=LGdesktop') {
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+                    .page {
+                        color: #000;
+                        font-family: 'Montserrat Alternates', sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        text-align: center;
+                        text-decoration: none;
+                        margin-left: 10px;
+                        @include media('>=LGdesktop') {
+                            font-size: 23px;
+                        }
+                    }
+                    .current {
+                        color: #4BCE1C;
+                        border-bottom: 1px solid #4BCE1C;
+                    }
+                }
+                .notes_block {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 70%;
+                    .note {
+                        background-color: #fff;
+                        width: 290px;
+                        height: 250px;
+                        border: none;
+                        border-radius: 10px;
+                        margin-left: 20px;
+                        margin-top: 20px;
+                        position: relative;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        @include media('>=LGdesktop') {
+                            width: 350px;
+                            height: 320px;
+                        }
+                        &_top {
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
                             margin-top: 5px;
-                            .header {
-                                font-family: 'Montserrat Alternates', sans-serif;
-                                font-style: normal;
-                                font-weight: bold;
-                                font-size: 13px;
-                                color: #000000;
-                                text-align: center;
-                                line-height: 23px;
-                                word-wrap: break-word;
-                                max-width: 130px;
-                                @include media('>=LGdesktop') {
-                                    font-size: 18px;
-                                    max-width: 170px;
+                            .note_header {
+                                margin-left: 20px;
+                                margin-top: 5px;
+                                .header {
+                                    font-family: 'Montserrat Alternates', sans-serif;
+                                    font-style: normal;
+                                    font-weight: bold;
+                                    font-size: 10px;
+                                    color: #000000;
+                                    text-align: center;
+                                    line-height: 20px;
+                                    word-wrap: break-word;
+                                    max-width: 150px;
+                                    @include media('>=LGdesktop') {
+                                        font-size: 18px;
+                                        max-width: 170px;
+                                    }
+                                }
+                            }
+                            .note_date {
+                                margin-right: 20px;
+                                margin-top: 5px;
+                                .date {
+                                    font-family: 'Montserrat Alternates', sans-serif;
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: 10px;
+                                    line-height: 20px;
+                                    text-align: center;
+                                    color: #4BCE1C;
+                                    @include media('>=LGdesktop') {
+                                        font-size: 14px;
+                                    }
                                 }
                             }
                         }
-                        .note_date {
-                            margin-right: 20px;
-                            margin-top: 5px;
-                            .date {
-                                font-family: 'Montserrat Alternates', sans-serif;
-                                font-style: normal;
-                                font-weight: normal;
-                                font-size: 10px;
-                                line-height: 20px;
-                                text-align: center;
-                                color: #4BCE1C;
-                                @include media('>=LGdesktop') {
-                                    font-size: 14px;
-                                }
-                            }
-                        }
-                    }
-                    &_middle {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-top: 50px;
-                        height: 100px;
-                        .text {
-                            font-family: 'Montserrat Alternates', sans-serif;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 16px;
-                            line-height: 25px;
-                            letter-spacing: 0.1px;
-                            text-align: center;
-                            color: #000000;
-                            max-width: 95%;
-                            word-wrap: break-word;
-                            @include media('>=LGdesktop') {
-                                font-size: 20px;
-                            }
-                        }
-                    }
-                    &_bottom {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        width: 300px;
-                        height: 50px;
-                        .mark {
-                            .marker_button {
-                                background: url('../media/create_and_read_images/marker.png');
-                                background-repeat: no-repeat;
-                                background-size: contain;
-                                width: 22px;
-                                height: 22px;
-                                cursor: pointer;
-                                @include media('>=LGdesktop') {
-                                    width: 28px;
-                                    height: 28px;
-                                }
-                            }
-                        }
-                        .upd_del {
+                        &_middle {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            margin-right: 35px;
-                            @include media('>=LGdesktop') {
-                                margin-right: 0;
-                            }
-                            .update_btn {
-                                background: url('../media/create_and_read_images/update.png');
-                                background-repeat: no-repeat;
-                                background-size: contain;
-                                width: 22px;
-                                height: 22px;
-                                cursor: pointer;
+                            margin-top: 50px;
+                            height: 70px;
+                            .text {
+                                font-family: 'Montserrat Alternates', sans-serif;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 13px;
+                                line-height: 23px;
+                                letter-spacing: 0.1px;
+                                text-align: center;
+                                color: #000000;
+                                max-width: 95%;
+                                word-wrap: break-word;
                                 @include media('>=LGdesktop') {
-                                    width: 28px;
-                                    height: 28px;
+                                    font-size: 20px;
                                 }
                             }
-                            .del_btn {
-                                background: url('../media/create_and_read_images/delete.png');
-                                background-repeat: no-repeat;
-                                background-size: contain;
-                                width: 22px;
-                                height: 20px;
-                                cursor: pointer;
+                        }
+                        &_bottom {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 300px;
+                            position: absolute;
+                            left: 3px;
+                            bottom: 3px;
+                            @include media('>=LGdesktop') {
+                                position: absolute;
+                                left: 10px;
+                                bottom: 10px;
+                            }
+                            .mark {
+                                .marker_button {
+                                    background: url('../media/create_and_read_images/marker.png');
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    width: 22px;
+                                    height: 22px;
+                                    cursor: pointer;
+                                    @include media('>=LGdesktop') {
+                                        width: 28px;
+                                        height: 28px;
+                                    }
+                                }
+                            }
+                            .upd_del {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 15px;
                                 @include media('>=LGdesktop') {
-                                    width: 28px;
-                                    height: 28px;
+                                    margin-right: 0;
+                                }
+                                .update_btn {
+                                    background: url('../media/create_and_read_images/update.png');
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    width: 22px;
+                                    height: 22px;
+                                    cursor: pointer;
+                                    @include media('>=LGdesktop') {
+                                        width: 28px;
+                                        height: 28px;
+                                    }
+                                }
+                                .del_btn {
+                                    background: url('../media/create_and_read_images/delete.png');
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    width: 22px;
+                                    height: 20px;
+                                    cursor: pointer;
+                                    @include media('>=LGdesktop') {
+                                        width: 28px;
+                                        height: 28px;
+                                    }
                                 }
                             }
                         }
