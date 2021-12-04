@@ -22,10 +22,6 @@ class Note(models.Model):
     date = models.DateField(auto_now=True)
     text = models.TextField(max_length = 160)
     is_important = models.BooleanField(null=True, default=False)
-<<<<<<< HEAD
-=======
-
->>>>>>> bb61eade0eb0dd77d576c27aef3a3cf07d835bbb
 
     class Meta:
         ordering = ['-date', 'is_important']

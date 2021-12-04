@@ -67,18 +67,24 @@ class ReadNotesView(LoginRequiredMixin, ListView):
     paginate_by = 4
 
     def get(self, request, *args, **kwargs):
-        notes = Note.objects.filter(user = request.user)
-        collections = Collection.objects.filter(user=request.user)
         page = int(request.GET.get('page', 1))
+        sort_by = int(request.GET.get('sort_by', 0))
+
+        collections = Collection.objects.filter(user=request.user)
+        if sort_by:
+            notes = Note.objects.filter(user = request.user, collection=sort_by)
+        else:
+            notes = Note.objects.filter(user = request.user)
+
         start_index = (page * self.paginate_by) - self.paginate_by
         end_index = page * self.paginate_by
         pages_count = math.ceil(len(notes) / self.paginate_by)
 
         if page > 0:
             if page > pages_count:
-                return redirect(f'/notes/read_note/?page={pages_count}')
+                return redirect(f'/notes/read/?page={pages_count}')
             elif page < 1:
-                return redirect('/notes/read_note/?page=1')
+                return redirect('/notes/read/?page=1')
         else:
             return render(request, 'notes/read_notes.html')
 
@@ -89,13 +95,8 @@ class ReadNotesView(LoginRequiredMixin, ListView):
                                                          'prev': page - 1,
                                                          'pages_count': pages_count,
                                                          'pages_count_list': range(1, pages_count+1)})
-<<<<<<< HEAD
 
 def create_collection(request):
-=======
-    
-def create_collection(request, **kwargs):
->>>>>>> bb61eade0eb0dd77d576c27aef3a3cf07d835bbb
     form = CreateCollectionModelForm(request.POST or None)
 
     if request.method == "POST":
@@ -120,12 +121,18 @@ def create_collection_form(request):
     }
     return render(request, "notes/collection_create_form.html", context)
 
-<<<<<<< HEAD
-=======
 def delete_collection(request, pk):
     col = get_object_or_404(Collection, id=pk)
 
     if request.method == "POST":
         col.delete()
         return HttpResponse("")
->>>>>>> bb61eade0eb0dd77d576c27aef3a3cf07d835bbb
+
+def mark_note_view(request, pk):
+    note = get_object_or_404(Note, id=pk)
+    print(note.is_important)
+    if request.method == 'POST':
+        note.is_important = not note.is_important
+        note.save()
+        print(note.is_important)
+        return HttpResponse("")  
